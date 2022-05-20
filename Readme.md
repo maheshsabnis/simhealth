@@ -26,3 +26,25 @@
 			- Each Entry is stored as Object
 	- System.Collections.Generics
 		- Generic Concept
+- Object Oriented Programming in C#
+	- class
+		- Access Specifiers
+			- private : Set the access of declaration (Data Member, Method, Property) within the class, 
+			- public: Set the access of declaration 'Everywhere by any consumer of the class', 
+			- protected: Set the access of declaration within class an its derive class, 
+			- internal: Set the access of declaration withing a containing namespace and assembly,
+			- protected internal: Set the access of declaration in same assemly in derived class also in derived class of dirrerent assemly
+			- 
+		- Modifiers
+			- abstract: When used for class, it is abstract class and it cannot be instntiated, i.e. cannot be repesented as a 'REACL-WORLD' object,
+				- WHen used for the method, then the method does not have any logic (Implementation)
+				- The Abstract class 'MUST BE INHERITED'
+				- The Abstract methos 'MUST BE OVERIIDEN'
+					- Write your logic
+			- virtual: APplied only on the method, this has an implementation (logic), but this can be changed by the derived class , 
+			- static : a class of which instance cannot be created, this is also knws as a 'Shared' class. The static class can have only static method,
+			- sealed: Class which cannot be inherited sealed methods cannot be overriden ,
+			- override: COmpletely Change implementation of virtual method of te base class or use its as it is in derived class, 
+			- new: Shadowing
+		- methods
+		- properties
