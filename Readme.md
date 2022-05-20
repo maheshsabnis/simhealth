@@ -48,3 +48,11 @@
 			- new: Shadowing
 		- methods
 		- properties
+	- The class MUST ne instantiated using 'new' keyword,otherwise the runtime will not be able to assign memory to it and if we use the class reference w/o instance the 'Object Referenece is Not to Set an INstance of an object' error will occure at runtime
+		- ClaMath math = new ClaMath();
+		- FAct: WHen the class is instantiated, its 'DEfault COnstrutor' is called
+		- NOTE: A class can have multiple COnstructors with various parameters aka parameterized constructors
+	- Logcal Operator
+		- || or
+		- && AND
+		- ! NOT
