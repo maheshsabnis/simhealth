@@ -15,11 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Collections", "CS_Collec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_New_Cllections", "CS_New_Cllections\CS_New_Cllections.csproj", "{31D96AFF-A537-4D9F-AEF9-2EC16BD66420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_COllection_App", "CS_COllection_App\CS_COllection_App.csproj", "{96393A35-5D87-43FE-9296-4B36240139A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_COllection_App", "CS_COllection_App\CS_COllection_App.csproj", "{96393A35-5D87-43FE-9296-4B36240139A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OOPs", "OOPs", "{22230BC0-5834-4A30-8045-02955CE4FF3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_SimpleClass", "CS_SimpleClass\CS_SimpleClass.csproj", "{622C4D29-5069-47AC-A0E8-61D16BADBFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_SimpleClass", "CS_SimpleClass\CS_SimpleClass.csproj", "{622C4D29-5069-47AC-A0E8-61D16BADBFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_OOPs_App", "CS_OOPs_App\CS_OOPs_App.csproj", "{2BD38E15-8C98-498C-AE20-B5C313274A20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +49,17 @@ Global
 		{622C4D29-5069-47AC-A0E8-61D16BADBFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622C4D29-5069-47AC-A0E8-61D16BADBFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622C4D29-5069-47AC-A0E8-61D16BADBFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD38E15-8C98-498C-AE20-B5C313274A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD38E15-8C98-498C-AE20-B5C313274A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD38E15-8C98-498C-AE20-B5C313274A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD38E15-8C98-498C-AE20-B5C313274A20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{622C4D29-5069-47AC-A0E8-61D16BADBFCF} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
+		{2BD38E15-8C98-498C-AE20-B5C313274A20} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95DF4487-E329-4049-91E0-06800EE50DED}

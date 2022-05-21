@@ -56,3 +56,15 @@
 		- || or
 		- && AND
 		- ! NOT
+
+# Using OOPs For Appliaction Development
+- CReate Two-Types of Classes
+	- A Class that will only contains properties to accept nd store data	
+		- Model Class /  Entity Classes (Generally Name USed) / Value Object / Data Transmision Object (DTO)
+		- These propertie with be public properties with get/set
+			- set to to accept the data and pass it to the private member
+			- get is to read data from provate member and return it
+	- A Class that will contain methods to proform Crete / Read / Update /Delete operations using the ENtity Class.
+		- Every method in this class with eithr accepts Entity class or return entity class or Both 
+	- A class can have 'only one' base class 
+	- If the class is DTO / ENtity class, then it can have 'AUTO-IMPLEMENTED' properties (C# 3.0)
