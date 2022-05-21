@@ -68,3 +68,13 @@
 		- Every method in this class with eithr accepts Entity class or return entity class or Both 
 	- A class can have 'only one' base class 
 	- If the class is DTO / ENtity class, then it can have 'AUTO-IMPLEMENTED' properties (C# 3.0)
+- Create an Abstract class that contains Blue-Print for the Implementation
+	- This class can contains FOllowing methods
+		- virtual methods with default implemenattion, this can be as it is used by derived class or can be changed by derived class by overriding virtual method
+		- abstract method, this is a method declaration w/o any implementation, this MUST be implemented by derived class by overriding it, if derived class is not overriding abstract method, then the derived class MUST be made as abstract class otherwise it will not compiled.
+- CReate a Sealed class for the logic which cannot be oveiien by deriving the class
+	- TaxRules
+- Create a 'static' class for having 'one-logic' global to entire application
+	- Static class need not tob instantiated
+	- It can have only static methods
+	- Methods from static class  are directly accessed using name of the class 

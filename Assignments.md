@@ -12,3 +12,16 @@
 		- [] Dimension, will accept values in array and they will be used based on formulas used to calculate array based on shape
 			- e.g. if shape is square the area = l * l
 				- from array only choose first value
+
+# Date:21-May-2022
+
+1. Modify the CS_OOPs_App application for the following
+	- STore Data for Multiple Employees in ArrayList with multiple designations (Director, Manager, Engineer, Developer)
+	- Calculute Income and TAx for Each Employee from the ArrayList by accepting EmpNo from the Enduser
+	- Do ths in do..while loop
+2. Sele-Study
+	- REatanguar Array aka Multidiension array
+		- int [,] arr = new int[,] 
+	- Jagged Array
+		- Array of Arrays
+

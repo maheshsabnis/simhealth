@@ -11,6 +11,7 @@ namespace CS_OOPs_App
         public int HRA { get; set; }
         public int TA { get; set; }
         public int DA { get; set; }
+        public int TeamMembers { get; set; }
         public int TeamWorkAllowance { get; set; }
     }
 }

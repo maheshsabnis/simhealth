@@ -29,8 +29,30 @@ namespace CS_OOPs_App
             Console.WriteLine($"EmpNo \t EmpName \t Salary \t Designation \t DeptName");
             foreach (EmployeeDTO item in emps)
             {
-                Console.WriteLine($"{item.EmpNo}\t{item.EmpName}\t{item.Salary}\t{item.Designation}\t{item.DeptName} ");
+                //Console.WriteLine($"{item.EmpNo}\t{item.EmpName}\t{item.Salary}\t{item.Designation}\t{item.DeptName} ");
+
+                Logger.Log(emp); // The static method
+
+
+                Console.WriteLine("Please press any key to calculate payroll");
+                Console.ReadLine();
+                if (emp.Designation == "Director")
+                {
+                    DirectorPayroll director = new DirectorPayroll();
+                    int income = director.CalculateIncome(emp);
+                    double tax = director.CalculateTax(income);
+                    Console.WriteLine($"Income of Director = {income} and payable tax is {tax}");
+                }
+                if (emp.Designation == "Manager")
+                {
+                    ManagerPayroll manager = new ManagerPayroll();
+                    int income = manager.CalculateIncome(emp);
+                    double tax = manager.CalculateTax(income);
+                    Console.WriteLine($"Income of Manager = {income} and payable tax is {tax}");
+                }
             }
+
+           
 
 
             Console.WriteLine("Employee Infromation System");
