@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Overloading", "CS_Overlo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Shadowing", "CS_Shadowing\CS_Shadowing.csproj", "{D6291EA5-1AFA-4094-8138-C72BC4D6B706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Interfaces", "CS_Interfaces\CS_Interfaces.csproj", "{763E518A-EFBA-408A-9367-17F2051CE7A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{D6291EA5-1AFA-4094-8138-C72BC4D6B706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6291EA5-1AFA-4094-8138-C72BC4D6B706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6291EA5-1AFA-4094-8138-C72BC4D6B706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763E518A-EFBA-408A-9367-17F2051CE7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763E518A-EFBA-408A-9367-17F2051CE7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763E518A-EFBA-408A-9367-17F2051CE7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763E518A-EFBA-408A-9367-17F2051CE7A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{2BD38E15-8C98-498C-AE20-B5C313274A20} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
 		{1A05A216-63F6-4FB2-B57E-4DC0165A6FB9} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
 		{D6291EA5-1AFA-4094-8138-C72BC4D6B706} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
+		{763E518A-EFBA-408A-9367-17F2051CE7A6} = {22230BC0-5834-4A30-8045-02955CE4FF3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95DF4487-E329-4049-91E0-06800EE50DED}

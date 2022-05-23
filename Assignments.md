@@ -1,4 +1,4 @@
-# Date: 20-May-2022
+	# Date: 20-May-2022
 
 1. Create a class, that contains public method for following operations
 	- RaisedTo(x,y) return x raised to y
