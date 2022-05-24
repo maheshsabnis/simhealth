@@ -25,3 +25,16 @@
 	- Jagged Array
 		- Array of Arrays
 
+
+# Date: 24-May-2022
+- If the NetIncome of an EMployee in the Arrayist is More than Rs. 500000, then raise an event that will make sure that the Tax calcluation information to be printed on the screen 
+	- DO this for Each EMployee in Array List
+	- Replace Arrayist by List<Employee>
+	1. List all Employees by Specific DeptNAme
+	2. List all Employees by Specific Designation
+	3. SOrt all Employyees by EmpNAme 
+	4. SOrt All Employees by Salary
+	5. Print Employee Per DepatNAme having Second MAximum Salary
+
+- Self-Study
+	- ref, out, params

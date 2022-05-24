@@ -77,4 +77,13 @@
 - Create a 'static' class for having 'one-logic' global to entire application
 	- Static class need not tob instantiated
 	- It can have only static methods
-	- Methods from static class  are directly accessed using name of the class 
+	- Methods from static class  are directly accessed using name of the class
+	
+# Delegate and Events
+1. System.Delegate is an object used to eclare delegate
+	- The 'delegate' as a Keyword used to declara delegate in codes
+	- Delegate MUST be declared at 'Namesace level', so that it is available for all clases inside that namespace
+2. Event is a speial delegate that is raised when a condition Occurs
+	- EVent is always declared inside the class
+	- Event is declared using delegate
+	- The delegate which is used to declare an event MUST have return type as void
