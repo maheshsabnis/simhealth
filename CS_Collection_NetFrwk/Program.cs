@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace CS_Generics
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CS_Collection_NetFrwk
 {
     internal class Program
     {
@@ -26,8 +30,7 @@ namespace CS_Generics
             lstInt.Add(50);
 
 
-         
-
+             
             foreach (int val in lstInt)
             {
                 Console.WriteLine($"Integer val = {val}");
@@ -35,13 +38,13 @@ namespace CS_Generics
             // Search the Last Idnex of 10
             // Hay, Method take v as input para,eter with value as 10
             // and returns the index of its Last idnex
-            
+
             int lastIndex = lstInt.FindLastIndex(v => v == 10);
 
             var result = lstInt.FindAll(v => v > 45);
             foreach (int val in result)
             {
-            Console.WriteLine($"All greater than 45 = {val}");
+                Console.WriteLine($"All greater than 45 = {val}");
 
             }
 
@@ -59,8 +62,8 @@ namespace CS_Generics
             }
 
             List<Employee> lstEmp = new List<Employee>();
-                                        // Object Initializer
-            lstEmp.Add(new Employee() {EmpNo = 101, EmpName="Mahesh",Salary=45000 });
+            // Object Initializer
+            lstEmp.Add(new Employee() { EmpNo = 101, EmpName = "Mahesh", Salary = 45000 });
             lstEmp.Add(new Employee() { EmpNo = 102, EmpName = "Vikram", Salary = 55000 });
             lstEmp.Add(new Employee() { EmpNo = 1013, EmpName = "Subodh", Salary = 41000 });
 
@@ -71,13 +74,13 @@ namespace CS_Generics
 
             Console.WriteLine("Print all Employees having salary more than 42k");
 
-            var emps = lstEmp.FindAll(e=>e.Salary > 42000);
+            var emps = lstEmp.FindAll(e => e.Salary > 42000);
 
-            emps.ForEach(e=> {
+            emps.ForEach(e => {
                 Console.WriteLine(e.EmpName);
             });
 
-            Console.ReadLine();    
+            Console.ReadLine();
         }
     }
 
@@ -88,3 +91,4 @@ namespace CS_Generics
         public int Salary { get; set; }
     }
 }
+

@@ -87,3 +87,11 @@
 	- EVent is always declared inside the class
 	- Event is declared using delegate
 	- The delegate which is used to declare an event MUST have return type as void
+
+# Generics
+1. TypeSafe Data Structre
+2. They have collections
+	- All these are IEnumerable<T>, ICollection<T>
+	- Dictionary<TKey,TValue>
+		- Most used collection to store data as KeyValue Pair
+# LANGUAGE INTEGRATED QUEIRY (Linq)
