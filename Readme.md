@@ -98,3 +98,47 @@
 
 https://1drv.ms/u/s!AuCjRTzCu2zzlDAel1Wu8ZazuL9h?e=TKnYwg
 
+	- Namespace
+		- using System.Linq;
+	- Extension Methods
+	- Lambda Expression
+	- Autom-Implemented Properties
+	- Anonymous Types
+		- AN Instance w/o class
+		- e.g. var obj  =  new {Property1=1, Property2="DD"};
+			- Encapsulations of values at runtime
+
+
+- Needs of LINQ
+	- A Collection
+	- Operator Expression Methods
+		- Select(Predicate)
+		- Where(Predicate)
+		- OrderBy(Predicate)
+		- OrderByDescending(Predicate)
+		- GroupBy(Predicate)
+		- Join(Predicate)
+		- ... and many more
+		- Most of the "Operator Expression Methods" returns "IEnumerable<T>"
+	- Predicate
+		- AN expression (aka Lambda Expression) that will be executed on the Collection
+	- Format Conversion Methods
+		- These are the extesnion methods used for format conversion of the result from Query
+			- ToList()
+			- ToArray()
+			- ... an many more
+	- Result Selection Operator Methods
+		- First(), FirstOrDefault()
+		- Last(), LastOrDefault()
+		- Take()
+		- Skip()
+		- Sum()
+		- Min()
+		- Max()
+		- ... and many more
+- Two Types of LINQ
+	- Declarative
+		- USes Extension Methods with Lambda Expression for Query
+	- Imperative
+		- USes SQL like Syntax
+			- from, select, where, orderby, group, by, desc, etc. 

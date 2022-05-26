@@ -38,3 +38,11 @@
 
 - Self-Study
 	- ref, out, params
+
+# Date:26-May-2022
+1. Create Departments collection with each Record with DeptNo, DeptName, Location
+2. Create Employee Collection with each record as EmpNo, EmpName, Salary, DeptNo
+
+1. Print Second MAx Salary Per Dept
+2. Print MAx Salary Per Dept
+3. Sum of Salary base on DeptName Group
