@@ -95,3 +95,6 @@
 	- Dictionary<TKey,TValue>
 		- Most used collection to store data as KeyValue Pair
 # LANGUAGE INTEGRATED QUEIRY (Linq)
+
+https://1drv.ms/u/s!AuCjRTzCu2zzlDAel1Wu8ZazuL9h?e=TKnYwg
+
