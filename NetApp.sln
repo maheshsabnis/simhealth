@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30E7277A-E614-4C30-AD6A-2C945BD30E28}"
 	ProjectSection(SolutionItems) = preProject
 		Assignments.md = Assignments.md
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Appls.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Appls.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\LINQ_HOL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\LINQ_HOL.pdf
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -39,11 +42,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenericsApps", "GenericsApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Generics", "CS_Generics\CS_Generics.csproj", "{DF23CCCE-0344-4F1E-AF2F-DC851BFA5830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Dictionary", "CS_Dictionary\CS_Dictionary.csproj", "{2B0F2DA1-2823-4BE3-9D0A-3277BC77D786}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Dictionary", "CS_Dictionary\CS_Dictionary.csproj", "{2B0F2DA1-2823-4BE3-9D0A-3277BC77D786}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Collection_NetFrwk", "CS_Collection_NetFrwk\CS_Collection_NetFrwk.csproj", "{3AE4DCB4-17B1-493E-B902-DE1E2AA25A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_ExtensionMethods", "CS_ExtensionMethods\CS_ExtensionMethods.csproj", "{AB46AE19-00A2-4307-916E-899D255B33BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_ExtensionMethods", "CS_ExtensionMethods\CS_ExtensionMethods.csproj", "{AB46AE19-00A2-4307-916E-899D255B33BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
