@@ -142,3 +142,152 @@ https://1drv.ms/u/s!AuCjRTzCu2zzlDAel1Wu8ZazuL9h?e=TKnYwg
 	- Imperative
 		- USes SQL like Syntax
 			- from, select, where, orderby, group, by, desc, etc. 
+
+# EntityFrameworkCore (EF Core)
+
+1. Packages
+	- Microsoft.EntityFrameworkCore
+		- Base Package for EF Core
+		- DB Connetion
+		- Table Mapping
+	- Microsoft.EntityFrameworkCore.SqlServer
+		- SQL Server DB Access and Connectivity
+	- Microsoft.EntityFrameworkCore.Relational
+		- Access to RDBMS or Ralation DB
+	- Microsoft.EntityFrameworkCore.Design
+		- DB Design using Code-First Approah with Fluent APIs
+	- Microsoft.EntityFrameworkCore.Tools
+		- Tools for
+			- Generation Conceptual Model (Entity Classes) from Database, Database	
+			- Generate Database from Model Design, Code-First
+2. COmmand Line to Work with .NET Core
+	- Add Package for the Project
+		- dotnet add package [PACKAGE-NAME] -v [VERSION-NO]
+		- e.g.
+			- dotnet add package Microsoft.EntityFrameworkCore -v 5.0 
+3. Using Database-First Approach
+	- You MUST have database and Tables
+- Create Database Company	
+- USE [Company]
+GO
+
+/****** Object:  Table [dbo].[Department]    Script Date: 5/27/2022 11:45:05 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Department](
+	[DeptNo] [int] NOT NULL,
+	[DeptName] [varchar](100) NOT NULL,
+	[Capacity] [int] NOT NULL,
+	[Location] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[DeptNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [Company]
+GO
+
+/****** Object:  Table [dbo].[Employee]    Script Date: 5/27/2022 11:45:23 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Employee](
+	[EmpNo] [int] NOT NULL,
+	[EmpName] [varchar](200) NOT NULL,
+	[Designation] [varchar](200) NOT NULL,
+	[Salary] [int] NOT NULL,
+	[DeptNo] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EmpNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD FOREIGN KEY([DeptNo])
+REFERENCES [dbo].[Department] ([DeptNo])
+GO
+
+
+- Generate Logical Model from Database
+ - The EF Core Comand Line MUST be installed on the Maching
+	- dotnet tool install --global dotnet-ef
+- dotnet ef dbcontext scaffold "[CONNECTION-STRING-TO-DATABASE]" [RELATIONAL-DB-PROVIDER-PACKAGE] -o [FOLDER-WHERE-MODEL-CLASSES-WILL-BE-CREATED]
+
+- e.g.
+	- dotnet ef dbcontext scaffold "Data Source=.;INitial Catalog=Company;Integrated Security=SSPI" Microsoft.EntityFrameworkCore.SqlServer -o Models
+		- Data Source: The Name/IP Address of the MAchne with Database is installed
+			- The '.' means local mahcine, Oteh values (local) 
+		- Initial Catalog: The NAme of the database
+		- Integrated Security: USed only if you are using WIndows USer as database Admin/Owner
+		- If not Admin then connection string will be
+			- "Data Source=.;INitial Catalog=Company;User Id=[NAME];Password=[Password]"
+		- Sometimes the Server has NAmed instances, in that case "Data Source" will be
+			- Data Source=[SERVER-NAME|IP|.]\[NSTANCE-NAME]
+				- e.g.
+					- Data Source=.\SQLExpress
+		- Other Type of Connection String
+			- Server=[SERVER-NAME|IP ADDRESS|.];Database=[DATABASE-NAME];Integrated Security=SSPI
+			- Server=[SERVER-NAME|IP ADDRESS|.];Database=[DATABASE-NAME];User Id=[NAME];Password=[Password]
+	- FOr Further details please read
+		- https://www.connectionstrings.com/microsoft-data-sqlclient/
+
+	- To USe ORM the Table MUST have Primary Key 
+
+- Classes and APIs
+	- DbContext
+		- BAse class for EF COre
+		- Manages DB Connection
+		- Manages CLass Mapping with Database Table using DbSet<T> class
+			- USes Fluent-API to Map Class and its proeprties with Database Tables and its columns
+		- Manages DB Trasactions using
+			- SaveChanges() and SaveChangesAsync()
+	- DbSet<T>
+		- Map the class of name T with Database Table of name T
+		- A Cursor that contains Records of the mapped table
+	- Pseduo COde
+		- COnsider 'ctx' is an instance of DbContext, Entity class is Employee and DbSet<Employee> is Emps
+		- List all Records of Employee table
+			- var res = ctx.Emps.ToList(); -- This needs Microsoft.EntityFrameworkCore used in code
+			- var res = await ctx.Emps.ToListAsync(); -- This needs Microsoft.EntityFrameworkCore used in code
+		- To Read/Search record based on Primary Key
+			- var rec = ctx.Emps.Find(PK Value);
+			- var rec = await ctx.Emps.FindAsync(PK Value);
+		- To Add New Records
+			- Create an instance of Entity class
+				- var emp = new Employee();
+			- Set its Property Values
+				- e.g.
+					- emp.EmpNo=90; emp.EmpName="AA";
+			- Call Add() / AddAsync() method of DbSet and pass employee instance
+				- var res = ctx.Emps.Add(emp); var res = await ctx.EMps.AddAsync(emp);
+			- Complete Transactions
+				- ctx.SaveChanges() / await ctx.SaveChangesAsync()
+		- TO Add Multiple Records
+			- CReate an Array/List of Entity class
+			- Set its values
+			- Call AddRange
+				- ctx.Emps.AddRange(Array / List);
+				- await ctx.Emps.AddRangeAsync(Array / List);
+			- Complete Transaction	
+		- To Update REcord
+			- First Search Record based on P.K.
+			- Chagne its property values
+			- Complete Transaction
+		- To Delete Record
+			- FIrst Search Record based on P.K.
+			- Call Remove (This is always Synchronous)
+				- ctx.Emps.Remove(SEARCHED-RECORD)
+			- Complete Transaction
+				
+
+			
