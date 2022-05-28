@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EFCore_DbFirst.Models
 {
-    public partial class Employee
+    public partial class Employee: EntityBase
     {
         // Primary Key
         public int EmpNo { get; set; }

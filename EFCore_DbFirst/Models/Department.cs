@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EFCore_DbFirst.Models
 {
-    public partial class Department
+    public partial class Department : EntityBase
     {
         public Department()
         {

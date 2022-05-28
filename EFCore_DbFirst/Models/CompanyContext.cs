@@ -12,14 +12,25 @@ namespace EFCore_DbFirst.Models
         {
         }
 
+        /// <summary>
+        /// USed for Depenednecy Injection
+        /// </summary>
+        /// <param name="options"></param>
         public CompanyContext(DbContextOptions<CompanyContext> options)
             : base(options)
         {
         }
+        /// <summary>
+        /// CLass Mapping with Database Table
+        /// </summary>
 
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
 
+        /// <summary>
+        /// USed to Estabish COnnection ith Database
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
