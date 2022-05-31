@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Core_API.Models;
 using Core_API.Services;
 using Microsoft.EntityFrameworkCore;
+using Core_API.CustomMiddlewares;
 
 namespace Core_API
 {
@@ -56,7 +57,11 @@ namespace Core_API
             services.AddScoped<IDbService<Department,int>, DepartmentDbService>();
 
             /// Method that informs the HOST that the Current Application is for API
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options => {
+                    // suppress the CamelCasing fo the JSON Response
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                });
             //Generate the API DOcumentation 
             services.AddSwaggerGen(c =>
             {
@@ -85,6 +90,9 @@ namespace Core_API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // APply the CUstom  Middleware
+            app.UseCustomExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {

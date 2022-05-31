@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Core_API.Models;
 using Core_API.Services;
+using System;
 
 namespace Core_API.Controllers
 {
@@ -46,14 +47,43 @@ namespace Core_API.Controllers
         [HttpPost]
         public IActionResult Post(Department data)
         {
-            var response = deptServ.Create(data);
-            return Ok(response);
+            //try
+            //{
+                // Check for the Model Validations
+                // if yes accept
+                if (ModelState.IsValid)
+                {
+                    // throw exception based on condition
+                    if (data.Capacity < 0) throw new Exception("Capacity Cannot be -ve");
+                    var response = deptServ.Create(data);
+                    return Ok(response);
+                }
+                else
+                {
+                    // else generate validation error response
+                    return BadRequest(ModelState);
+                }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Catch the exception  and return BAdRequest response
+            //    return BadRequest(ex.Message);
+            //}
+            
         }
         [HttpPut]
         public IActionResult Put(int id, Department data)
         {
-            var response = deptServ.Update(id, data);
-            return Ok(response);
+            if (ModelState.IsValid)
+            {
+                var response = deptServ.Update(id, data);
+                return Ok(response);
+            }
+            else
+            {
+                // else generate validation error response
+                return BadRequest(ModelState);
+            }
         }
         [HttpDelete]
         public IActionResult Delete(int id)
