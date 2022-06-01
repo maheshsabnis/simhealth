@@ -17,7 +17,7 @@ namespace Core_API.Models
         [Required(ErrorMessage = "DeptName is Mandatory")]
         // MaxLength, MinLength, Error Message
         [StringLength(40,MinimumLength = 5, ErrorMessage ="Mnimum 5 Characters are Required")]
-        [NameVaidation('D',ErrorMessage ="First Character Must be 'D'")]
+       // [NameVaidation('D',ErrorMessage ="First Character Must be 'D'")]
         public string DeptName { get; set; }
         [Required(ErrorMessage = "Capacity is Mandatory")]
         public int Capacity { get; set; }

@@ -15,7 +15,7 @@ using Core_API.Models;
 using Core_API.Services;
 using Microsoft.EntityFrameworkCore;
 using Core_API.CustomMiddlewares;
-
+using Core_API.CustomFilters;
 namespace Core_API
 {
     public class Startup
@@ -57,11 +57,14 @@ namespace Core_API
             services.AddScoped<IDbService<Department,int>, DepartmentDbService>();
 
             /// Method that informs the HOST that the Current Application is for API
-            services.AddControllers()
+            services.AddControllers(options => {
+                options.Filters.Add(new LogFilterAttribute()); // Applying attribute at Global Scope (For All Controllers and ts actin methods) 
+            })
                 .AddJsonOptions(options => {
                     // suppress the CamelCasing fo the JSON Response
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 });
+
             //Generate the API DOcumentation 
             services.AddSwaggerGen(c =>
             {
