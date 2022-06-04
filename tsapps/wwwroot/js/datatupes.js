@@ -11,7 +11,7 @@ var fullNameTraditional = firstName + ' ' + middleName + ' ' + lastName;
 console.log(fullNameTraditional);
 // ES 6 Template String aka String INterpoation
 // Build a SIngle Immutable STring Object
-var templateString = "".concat(firstName, " ").concat(middleName, " ").concat(lastName);
+var templateString = "".concat(firstName, " ").concat(middleName, " \n \n        ").concat(lastName);
 console.log("USing Interpolation ".concat(templateString));
 window.onload = function () {
     var depts = ["IT", "HR", "SL", "TR"];

@@ -16,7 +16,8 @@ console.log(fullNameTraditional);
 // ES 6 Template String aka String INterpoation
 // Build a SIngle Immutable STring Object
 
-let templateString = `${firstName} ${middleName} ${lastName}`;
+let templateString = `${firstName} ${middleName} \n 
+        ${lastName}`;
 
 console.log(`USing Interpolation ${templateString}`);
 
