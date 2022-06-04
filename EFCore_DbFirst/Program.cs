@@ -37,7 +37,7 @@ namespace EFCore_DbFirst
                 IDataAccess<Employee, int> empDa = new EmployeeDataAccess();
                 empDa.Create(new Employee());
 
-                IDataAccess<string, int> str; 
+              
 
 
             }
