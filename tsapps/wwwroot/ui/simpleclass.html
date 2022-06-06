@@ -7,7 +7,7 @@
     <script src="../js/oops/classwithmembers.js"></script>
     <script src="../js/oops/construtormembers.js"></script>
     <script src="../js/oops/functionoverloading.js"></script>
-
+    <script src="../js/oops/inheritance.js"></script>
     <script>
         // instance of the class
         var obj = new ClsSimple();
@@ -23,7 +23,15 @@
         obj4.printMessage("Mahesh");
         obj4.printMessage("Mahesh", "Sabnis");
 
+        // Using DErive class instance
+        // ACcess the BAse class COnstructor
+        let obj5 = new ClsDerive('First Patameter', 'Info Parameter', 'Value Parameter', 'Fourth Parameter');
 
+        obj5.display(); // DErive class MEthod
+        obj5.showInfo(); // Base Class Method
+        console.log(`Change Case Lower = ${obj5.changeCase('l')}`);
+        console.log(`Change Case Upper = ${obj5.changeCase('u')}`);
+        obj5.protectedMethod();
     </script>
 </head>
 <body>

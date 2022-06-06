@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/oops/arrayreader.js"></script>
+    <script>
+        window.onload = function () {
+            let pers1 = new Person(1001, 'ABC');
+            let pers2 = new Person(1002, 'PQR');
+            let pers3 = new Person(1003, 'MNO');
+            let pers4 = new Person(1004, 'LMN');
+            let persons = [];
+            persons.push(pers1);
+            persons.push(pers2);
+            persons.push(pers3);
+            persons.push(pers4);
+            document.getElementById('dvtable').innerHTML = dynaicReader(persons);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h4>Static</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Person Id</th>
+                    <th>Person Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10001</td>
+                    <td>Mahesh</td>
+                </tr>
+                <tr>
+                    <td>10002</td>
+                    <td>Tejas</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <hr/>
+    <div id="dvtable">
+
+    </div>
+</body>
+</html>

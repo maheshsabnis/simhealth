@@ -19,3 +19,5 @@ console.log('USing Arrow');
 names.forEach((n: string, i: number) => {
     console.log(`Record on ${i}ths position is = ${n}`);
 });
+
+
