@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js//oops/simpleclass.js"></script>
+    <script src="../js/oops/classwithmembers.js"></script>
+    <script src="../js/oops/construtormembers.js"></script>
+    <script src="../js/oops/functionoverloading.js"></script>
+
+    <script>
+        // instance of the class
+        var obj = new ClsSimple();
+        obj.printMessage();
+        var obj1 = new ClsMembers(10000);
+        obj1.printValues();
+        console.log(`${obj1.num2}`);
+        var obj2 = new ClsCtorMembers(10, 20, 0);
+        console.log(`Res = ${obj2.add()}`);
+        var obj3 = new ClsCtorMembers(10, 0, 0);
+        console.log(`Res = ${obj3.add()}`);
+        var obj4 = new ClsFonctionOverloading();
+        obj4.printMessage("Mahesh");
+        obj4.printMessage("Mahesh", "Sabnis");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

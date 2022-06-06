@@ -37,3 +37,7 @@ console.log(`obj4 = ${JSON.stringify(obj5)}`);
 // Valu Comparision
 
 console.log(1 == 1); // true
+
+
+
+
