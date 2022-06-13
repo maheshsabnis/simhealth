@@ -51,6 +51,14 @@ namespace Core_API
                 options.UseSqlServer(Configuration.GetConnectionString("AppConnStr"));
             });
 
+            // COnfigure CORS
+            services.AddCors(options => {
+                options.AddPolicy("corspolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                });
+            });
+
 
             // Register the Custom Services
             // INterface Name and the class that impements the interface
@@ -91,6 +99,9 @@ namespace Core_API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // COnfiure the CORS Midleware
+            app.UseCors("corspolicy");
 
             app.UseAuthorization();
 

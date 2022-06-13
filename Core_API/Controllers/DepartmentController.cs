@@ -71,7 +71,7 @@ namespace Core_API.Controllers
             //}
             
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, Department data)
         {
             if (ModelState.IsValid)
@@ -85,7 +85,7 @@ namespace Core_API.Controllers
                 return BadRequest(ModelState);
             }
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             var response = deptServ.Delete(id);

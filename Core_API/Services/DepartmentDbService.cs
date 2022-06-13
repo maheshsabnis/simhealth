@@ -45,7 +45,7 @@ namespace Core_API.Services
         }
 
         public Department Update(int id, Department entity)
-        {
+        {   
             var deptToUpdate = context.Departments.Find(id);
             if(deptToUpdate == null) return null;
 
