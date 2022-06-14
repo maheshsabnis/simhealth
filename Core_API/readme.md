@@ -92,3 +92,21 @@
         - IAtionFilter as interface
         - IExceptionFilter, implemented by ExceptionFilterAttribute class
         - IResultFilter, implemented by ResultFIlterAttrbute 
+- Microsoft.AspNetCore.Identity
+    - Package for ASP.NET Core Identity Eco-System
+    - Microsoft.AspNetCore.Identity.EntityFrameworkCore 
+        - USed for Establishing Cnection with Database where Aplication USers, Roles, and Claims information is stored
+        - IdentityUser
+            - User Entity Class that represents the user information
+        - IdentityRole
+            - Role ENtity class that is used to store Role INformation
+        - UserManager<IdentityUser>
+            - USe to Manage Application Users
+                - Create, update, delete, etc.
+        - RoleManager<IdetityRole>
+            - USed to Manage Application Role
+                - Create, List, etc.
+        - SingInManager<IdentityUser>
+            - Used for SignIn, and Signout
+- Create Users ad the Autheticate the user
+

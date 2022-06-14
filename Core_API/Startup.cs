@@ -16,6 +16,9 @@ using Core_API.Services;
 using Microsoft.EntityFrameworkCore;
 using Core_API.CustomMiddlewares;
 using Core_API.CustomFilters;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+
 namespace Core_API
 {
     public class Startup
@@ -51,6 +54,20 @@ namespace Core_API
                 options.UseSqlServer(Configuration.GetConnectionString("AppConnStr"));
             });
 
+
+            // COnfigure the security Information for the application
+            // 1. Configure the SecurityDatabase
+            services.AddDbContext<SecureDbContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("SecurityConnStr"));
+            });
+            // 2.Configure the Identity Service for the Application
+            // The Security Infromation will be read using EF Core from SecureDbContext
+            // This will also Resolve UserManager<IdentityUser>, SignInManager<IdentityUser>
+            // and RoleManager<IdenttyRole> by registering them in DI Container
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                 .AddEntityFrameworkStores<SecureDbContext>();
+
+
             // COnfigure CORS
             services.AddCors(options => {
                 options.AddPolicy("corspolicy", policy =>
@@ -63,6 +80,9 @@ namespace Core_API
             // Register the Custom Services
             // INterface Name and the class that impements the interface
             services.AddScoped<IDbService<Department,int>, DepartmentDbService>();
+
+            // REgister the AuthService in DI
+            services.AddScoped<AuthService>();
 
             /// Method that informs the HOST that the Current Application is for API
             services.AddControllers(options => {
@@ -102,7 +122,7 @@ namespace Core_API
 
             // COnfiure the CORS Midleware
             app.UseCors("corspolicy");
-
+            app.UseAuthentication();  // COnfigure User BAsed Authentication 
             app.UseAuthorization();
 
             // APply the CUstom  Middleware
