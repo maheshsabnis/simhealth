@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Core_API.Models;
 using Core_API.Services;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Core_API.Controllers
 {
@@ -13,6 +14,8 @@ namespace Core_API.Controllers
     /// Note: DEfault is always HttpGet 
     /// </summary>
     [Route("api/[controller]")]
+    [Authorize] // Use the AuthorizeAttribute to provide access of API to only
+                // Authenticated user
     [ApiController]
     public class DepartmentController : ControllerBase
     {

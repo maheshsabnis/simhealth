@@ -110,3 +110,16 @@
             - Used for SignIn, and Signout
 - Create Users ad the Autheticate the user
 
+- Using JWT for the API Project
+    - Install FOlloiwig PAckages
+        - System.IdentityModel.Tokens.Jwt
+            - Provide JWT Generation Algorithm and JSON Serialization for Token
+        - Microsoft.AspNetCore.Authentication.JwtBearer
+            - Enabling the JWT AUthentication
+    
+https://www.webnethelper.com/2020/01/understanding-token-based.html
+
+https://www.webnethelper.com/2020/01/authenticating-angular-8-client.html
+
+
+

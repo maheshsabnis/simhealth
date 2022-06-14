@@ -18,6 +18,8 @@ using Core_API.CustomMiddlewares;
 using Core_API.CustomFilters;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Core_API
 {
@@ -54,6 +56,7 @@ namespace Core_API
                 options.UseSqlServer(Configuration.GetConnectionString("AppConnStr"));
             });
 
+            
 
             // COnfigure the security Information for the application
             // 1. Configure the SecurityDatabase
@@ -64,9 +67,33 @@ namespace Core_API
             // The Security Infromation will be read using EF Core from SecureDbContext
             // This will also Resolve UserManager<IdentityUser>, SignInManager<IdentityUser>
             // and RoleManager<IdenttyRole> by registering them in DI Container
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                 .AddEntityFrameworkStores<SecureDbContext>();
+                services.AddIdentity<IdentityUser, IdentityRole>()
+                     .AddEntityFrameworkStores<SecureDbContext>();
 
+
+            // COfnigure AUthentication and Authorization
+            byte[] secretKey = Convert.FromBase64String(Configuration["JWTCoreSettings:SecretKey"]);
+
+            // 6. Set the AUthentication Service for Token BAsed AUthentication
+            // HTTP Header
+            // AUTHORIZATION: `Bearer [TOKEN-VALUE]`
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }) // Add the Service to Vaidate the Token
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true; // Saved ito the server's memory
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKey), // Take the Signeture to validate the token
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             // COnfigure CORS
             services.AddCors(options => {
