@@ -56,7 +56,15 @@ namespace Core_API
                 options.UseSqlServer(Configuration.GetConnectionString("AppConnStr"));
             });
 
-            
+
+            services.AddDbContext<ProductDbContext>(options =>
+            {
+                // Inforam the DbCOntext that it connection to SQL Server
+                // and the Connectio string is read from then appsettings.json
+                options.UseSqlServer(Configuration.GetConnectionString("ProductConnStr"));
+            });
+
+
 
             // COnfigure the security Information for the application
             // 1. Configure the SecurityDatabase

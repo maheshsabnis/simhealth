@@ -14,7 +14,7 @@ namespace Core_API.Controllers
     /// Note: DEfault is always HttpGet 
     /// </summary>
     [Route("api/[controller]")]
-    [Authorize] // Use the AuthorizeAttribute to provide access of API to only
+  //  [Authorize] // Use the AuthorizeAttribute to provide access of API to only
                 // Authenticated user
     [ApiController]
     public class DepartmentController : ControllerBase
